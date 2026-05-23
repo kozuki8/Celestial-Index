@@ -1065,13 +1065,14 @@ html {
 
 @media (max-width: 768px) {
 
+    .phase-label,
     .info-text,
     .info-text2,
     .info-text3,
     .info-text4 {
         position: static;
-        transform: none;
         margin: 10px 0;
+        transform: none;
         text-align: center;
     }
 }
