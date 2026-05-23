@@ -1039,7 +1039,10 @@ html {
 @media (max-width: 768px) {
 
     .fork,
-    .fork-arrow {
+    .fork-arrow,
+    .path-arrow,
+    .path-arroww,
+    .diagonal-arrow {
         display: none;
     }
 }
@@ -1053,8 +1056,10 @@ html {
 
     .phase-card img {
         height: 140px;
+        object-fit: cover;
     }
 }
+
 
 @media (max-width: 768px) {
 
@@ -1073,12 +1078,23 @@ html {
 
     .stellar-evolution {
         padding: 20px 10px;
-        gap: 20px;
+        align-items: center;
     }
 
     .paths {
         flex-direction: column;
-        gap: 40px;
+        gap: 30px;
         align-items: center;
+    }
+
+    .path1,
+    .path2 {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
     }
 }
