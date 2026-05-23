@@ -900,21 +900,56 @@ html {
 }
 
 @media (max-width: 768px) {
+
     .nav {
         flex-direction: row;
-        justify-content: space-between;
         padding: 10px 14px;
     }
-}
 
-@media (max-width: 768px) {
     .nav-search {
-        width: 140px;
+        width: 130px;
         margin-right: 10px;
     }
 
     .nav-search input {
-        width: 90px;
+        width: 80px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+    .grid-moon {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-moon {
+        grid-template-columns: 1fr;
     }
 }
 
