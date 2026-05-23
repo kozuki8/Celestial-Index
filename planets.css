@@ -247,3 +247,74 @@ h3 {
 .back-btn:hover {
     background: rgba(255,255,255,0.05);
 }
+
+@media (max-width: 768px) {
+
+    .wrapper {
+        width: 95%;
+        height: auto;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+        padding: 10px;
+    }
+
+    h3 {
+        font-size: 22px;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .exp {
+        font-size: 18px;
+        margin-top: 10px;
+        width: 95%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-search {
+        width: 140px;
+    }
+
+    .nav-search input {
+        width: 90px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    * {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+}
