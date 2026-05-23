@@ -898,3 +898,67 @@ h4 {
 html {
     scroll-behavior: smooth;
 }
+
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-search {
+        width: 140px;
+        margin-right: 10px;
+    }
+
+    .nav-search input {
+        width: 90px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .wrapper,
+    .wrapperr,
+    .wrapperrr {
+        width: 95%;
+        height: auto;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .comet {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wrapperrr {
+        width: 90%;
+        height: auto;
+    }
+
+    .wrapperr {
+        width: 90%;
+        height: auto;
+    }
+
+    .wrapper {
+        width: 90%;
+        height: auto;
+    }
+}
