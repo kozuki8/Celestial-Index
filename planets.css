@@ -1,0 +1,249 @@
+.nav {
+    display: flex;
+    width: 100%;
+    background-color: rgba(10,8,28,0.95);
+    text-align: center;
+    padding: 14px 28px;
+    border-bottom: 0.5px solid rgba(140,100,220,0.3);
+    font-family: "Orbitron", sans-serif;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    color: #c4a8f0;
+    gap: 8px;
+    letter-spacing: 0.02em;
+    align-items: center;
+    margin-left: 5px;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.nav-logo i {
+    font-size: 30px;
+}
+
+
+.nav-search {
+    display: flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 20px;
+    gap: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 0.5px solid rgba(140,100,220,0.3);
+    width: 200px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.nav-search input {
+    background: none;
+    outline: none;
+    border: none;
+    color: #e8e8f0;
+    font-size: 13px;
+    width: 140px;
+}
+
+.nav-search input::placeholder { color: #6060a0; }
+.nav-search i { font-size: 15px; color: #6060a0; }
+
+.suggestions-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 8px;
+
+    background: rgba(15,15,30,0.95);
+    border: 1px solid rgba(140,100,220,0.35);
+    border-radius: 12px;
+
+    overflow: hidden;
+    z-index: 999;
+
+    display: none;
+}
+
+.suggestion-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    color: #e8e8f0;
+    font-size: 13px;
+    transition: background 0.2s;
+}
+
+.suggestion-item:hover {
+    background: rgba(140,100,220,0.2);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    height: 300vh;
+    font-family: "Inter", sans-serif;
+    background: #0a0a1a;
+    color: #e8e8f0;
+    overflow-x: hidden;
+    max-width: 100%;
+    padding: 0;
+    position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+    width: 100%;
+    color: #c4a2fb;
+    padding: 20px;
+    font-size: 45px;
+    font-weight: bold;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+}
+
+img {
+    width: 900px;
+    height: 500px;
+    object-fit: contain;
+    background: black;
+}
+
+.img-milky {
+    width: 900px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.img-neptune {
+    width: 900px;
+    height: 500px;
+    object-fit: cover;
+    background-color: #0a0a1a;
+    background: black;
+}
+
+.img-mars {
+    width: 900px;
+    height: 500px;
+    object-fit: contain;
+    background: black;
+    padding: 30px;
+}
+
+.img-mercury {
+    width: 900px;
+    height: 500px;
+    object-fit: contain;
+    background: black;
+    padding: 30px;
+}
+
+.img-jupiter {
+    transform: scale(1.25);
+    object-fit: contain;
+}
+
+.img-moon {
+    transform: scale(1.25);
+    object-fit: contain;
+}
+
+.wrapper {
+    width: 900px;
+    height: 500px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    border-radius: 20px;
+    border: 5px solid rgba(140,100,220,0.45);
+}
+.planet-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 28px;
+}
+
+p {
+    color: #e0d1f7;
+}
+
+.exp {
+    font-size: 25px;
+    background-color: rgba(12, 27, 104, 0.473);
+    color: #8860d0;
+    padding: 10px 20px;
+    border-radius: 15px;
+    width: 100%;
+    margin-top: -50px;
+}
+
+h3 {
+    color: #8860d0;
+    font-size: 33px;
+    margin-left: 20px;
+    margin-top: 60px;
+    font-family: "Orbitron", sans-serif;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    padding: 0 28px 32px;
+    margin-top: 50px;
+}
+.stat {
+    background: rgba(255,255,255,0.03);
+    border: 0.5px solid rgba(140,100,220,0.2);
+    border-radius: 100px;
+    padding: 28px 26px;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.stat-num {
+    font-size: 30px;
+    font-weight: 300;
+    color: #c4a8f0;
+}
+.stat-label {
+    font-size: 25px;
+    color: #6060a0;
+    margin-top: 10px;
+}
+
+.back-btn {
+    position: absolute;
+    top: 80px;   /* navbar yüksekliğine göre ayarla */
+    left: 20px;
+
+    text-decoration: none;
+    color: #c4a8f0;
+    font-size: 35px;
+
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    background: rgba(255,255,255,0.05);
+}

@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="detail.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Orbitron&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    </head>
+    <body>
+        <nav class="nav">
+            <a href="index.html">
+            <div class="nav-logo">
+                <i class="ti ti-planet"></i> Celestial Index
+            </div>
+            </a>
+            <div class="nav-search">
+                <i class="ti ti-search"></i>
+                <input type="text" id="searchInput" placeholder="Search topics…" />
+                <div id="suggestions" class="suggestions-box"></div>
+            </div>
+        </nav>
+        <div id="content"></div>
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            const category = params.get("category");
+
+            const content = document.getElementById("content");
+            if (category === "planets") {
+                content.innerHTML = `
+                <h1>Planets</h1>
+                <div class="exp box">
+                    <h2>What is a Planet?</h2>
+                    <p>A planet is a large celestial body that orbits a star, such as the Sun.
+It does not produce its own light but reflects the light of its star.
+Planets are usually spherical due to their gravity.
+They can have moons, atmospheres, and different surface conditions.</p>
+                </div>
+                <h3>Solar System Planets</h3>
+                <h4>Our solar system consists of the Sun and eight officially recognized planets. They are divided into two main categories: the rocky inner planets (Mercury, Venus, Earth, and Mars) and the gaseous/icy outer planets (Jupiter, Saturn, Uranus, and Neptune), separated by the main asteroid belt.</h4>
+                <div class="main">
+                    <div class="item">
+                        <a href="planets.html?category=mercury">
+                            <img src="Mercury_in_true_color.jpg" class="img-mercury">
+                            <div class="label">Mercury</div>
+                        </a>
+                    </div>
+
+                     <div class="item">
+                        <a href="planets.html?category=venus">
+                            <img src="venus-mariner-10-pia23791-fig2-16x9-1.jpg" class="img-venus">
+                            <div class="label">Venus</div>
+                         </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="planets.html?category=earth">
+                            <img src="earth1.jpg" class="img-earth">
+                            <div class="label">Earth</div>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="planets.html?category=mars">
+                            <img src="photo-1770723963970-ace02c7db50e.avif" class="img-mars">
+                            <div class="label">Mars</div>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="planets.html?category=jupiter">
+                            <img src="Jupiter_against_black_background_of_space.jpeg" class="img-jupiter">
+                            <div class="label">Jupiter</div>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="planets.html?category=saturn">
+                            <img src="PIA17474~large.jpg" class="img-saturn">
+                            <div class="label">Saturn</div>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="planets.html?category=uranus">
+                            <img src="uranus.jpg" class="img-uranus">
+                            <div class="label">Uranus</div>
+                        </a>
+                    </div>
+
+                    <div class="item">
+                        <a href="planets.html?category=neptune">
+                            <img src="photo-1614313913007-2b4ae8ce32d6.avif" class="img-neptun">
+                            <div class="label">Neptune</div>
+                        </a>
+                    </div>
+                </div>
+                <h3>Dwarf Planets</h3>
+                <h4>A dwarf planet is a celestial body orbiting the Sun that is massive enough to be rounded by its own gravity but has not cleared its orbital neighborhood of other debris.</h4>
+                <div class="grid">
+                    <div class="card">
+                        <img src="crop_p_color2_enhanced_release_small.webp" class="img-pluto" />
+                        <div class="card-body">
+                            <div class="card-title">Pluto</div>
+                            <div class="card-desc">The most famous dwarf planet. It was formerly considered the ninth major planet until its reclassification in 2006. It is located in the icy Kuiper Belt and has five known moons.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="pia21906-ceres-full-globe-1280x900-1.webp" class="card-img" />
+                        <div class="card-body">
+                            <div class="card-title">Ceres</div>
+                            <div class="card-desc">The only dwarf planet located in the inner solar system, residing in the main asteroid belt between Mars and Jupiter. It is the smallest and closest of the five to the Sun.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Eris_icy-dwarf-planet_kuiper-belt_1m.jpg" class="card-img" />
+                        <div class="card-body">
+                            <div class="card-title">Eris</div>
+                            <div class="card-desc">The most massive and second-largest known dwarf planet. Its discovery in 2005 actually prompted the IAU to create the "dwarf planet" classification. It orbits the Sun in the distant Kuiper Belt.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Haumea_1050x700.avif" class="card-img" />
+                        <div class="card-body">
+                            <div class="card-title">Haumea</div>
+                            <div class="card-desc">A highly elongated, football-shaped dwarf planet. Located in the Kuiper Belt, it spins so fast that a single "day" lasts just 4 hours, and it even possesses its own ring system.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Makemake.jpg" class="img-makemake" />
+                        <div class="card-body">
+                            <div class="card-title">Makemake</div>
+                            <div class="card-desc"> A large, extremely bright dwarf planet in the Kuiper Belt. It is second only to Pluto in brightness when viewed from Earth and has one tiny, faint moon.</div>
+                        </div>
+                    </div>
+                </div>
+                <h3>Expo Planets</h3>
+                <h4>An exoplanet is any planet that exists outside our Solar System. The vast majority orbit distant stars, but some free-floating "rogue planets" drift through deep space untethered to any star. Here is the most well-known ones;</h4>
+                <div class="grid">
+                    <div class="card">
+                        <img src="Dimidium.webp" class="img-pluto" />
+                        <div class="card-body">
+                            <div class="card-title">52 Pegasi b</div>
+                            <div class="card-desc">A milestone in astronomy. Discovered in 1995, it was the first confirmed exoplanet to be found orbiting a sun-like star.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="decided-to-make-a-render-of-an-ideal-proxima-centauri-b-v0-ebwgyenfyatg1.webp" class="img-pluto" />
+                        <div class="card-body">
+                            <div class="card-title">Proxima Centauri b</div>
+                            <div class="card-desc">The closest known exoplanet to Earth. At just 4 light-years away, this Earth-sized world orbits in its red dwarf star's habitable zone.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="TRAPPIST-1e.png" class="img-pluto" />
+                        <div class="card-body">
+                            <div class="card-title">TRAPPIST-1e</div>
+                            <div class="card-desc">Part of a famous, tightly packed seven-planet system located 40 light-years away. It is often highlighted as one of the most promising potentially habitable worlds.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="ab67616d0000b2732b913b7e50f4867971328a66.jpg" class="img-pluto" />
+                        <div class="card-body">
+                            <div class="card-title">Kepler-186f</div>
+                            <div class="card-desc">One of the first Earth-size planets found in a star’s habitable zone.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Kepler-452b_art.jpg" class="img-pluto" />
+                        <div class="card-body">
+                            <div class="card-title">Kepler-452b</div>
+                            <div class="card-desc">Often dubbed Earth's "older cousin." Discovered by the Kepler space telescope, this exoplanet orbits a star very similar to our Sun in the habitable zone.</div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }
+            else if (category === "moons") {
+                content.innerHTML = `
+                <h1>Moons</h1>
+                <div class="exp box">
+                    <h2>What is a Moon?</h2>
+                    <p>A moon is a natural object that orbits a planet or another celestial body in space. Moons come in many different sizes and shapes, and some have atmospheres or even underground oceans.</p>
+                </div>
+                <h3>Earth's Moon: Luna</h3>
+                <h4>Moon is Earth’s only natural satellite and the fifth-largest moon in the Solar System.</h4>
+                <div class="main">
+                    <div class="item">
+                        <a href="planets.html?category=moon">
+                            <img src="mooon.jpg" class="img-moon">
+                            <div class="label">The Moon (Luna)</div>
+                        </a>
+                    </div>
+                </div>
+                <h3>Solar System Moons</h3>
+                <h4>There are more than 900 moon in the Solar System. Here are some of most well-known ones:</h4>
+                <div class="grid-moon">
+                    <div class="card-moon">
+                        <img src="phobos-pia10368-1920x1200-1.webp" class="img-phobos" />
+                        <div class="card-body">
+                            <div class="card-title">Phobos</div>
+                            <div class="card-desc">One of Mars’ two moons, very close to the planet and slowly spiraling inward over time.</div>
+                        </div>
+                    </div>
+                    <div class="card-moon">
+                        <img src="jupiter-2.jpg" class="img-phobos" />
+                        <div class="card-body">
+                            <div class="card-title">Ganymede</div>
+                            <div class="card-desc">The largest moon in the Solar System and a moon of Jupiter, even bigger than the planet Mercury.</div>
+                        </div>
+                    </div>
+                    <div class="card-moon">
+                        <img src="Europa.webp" class="img-phobos" />
+                        <div class="card-body">
+                            <div class="card-title">Europa</div>
+                            <div class="card-desc">A moon of Jupiter with an icy surface and a strong possibility of a subsurface ocean beneath the ice.</div>
+                        </div>
+                    </div>
+                    <div class="card-moon">
+                        <img src="callisto.jpg" class="img-phobos" />
+                        <div class="card-body">
+                            <div class="card-title">Callisto</div>
+                            <div class="card-desc">A heavily cratered moon of Jupiter, one of the oldest surfaces in the Solar System.</div>
+                        </div>
+                    </div>
+                    <div class="card-moon">
+                        <img src="PIA00583.jpg" class="img-phobos" />
+                        <div class="card-body">
+                            <div class="card-title">Io</div>
+                            <div class="card-desc">A moon of Jupiter, known as the most volcanically active object in the Solar System due to intense tidal heating.</div>
+                        </div>
+                    </div>
+                    <div class="card-moon">
+                        <img src="titanglassnasa.webp" class="img-phobos" />
+                        <div class="card-body">
+                            <div class="card-title">Titan</div>
+                            <div class="card-desc">Saturn’s largest moon, with a thick nitrogen-rich atmosphere and lakes of liquid methane.</div>
+                        </div>
+                    </div>
+                    <div class="card-moon">
+                        <img src="Enceladus - Cassini ISS NA Color Mosaic.png" class="img-phobos" />
+                        <div class="card-body">
+                            <div class="card-title">Enceladus</div>
+                            <div class="card-desc">A moon of Saturn that ejects water ice jets from a hidden ocean beneath its icy crust.</div>
+                        </div>
+                    </div>
+                    <div class="card-moon">
+                        <img src="triton.jpg" class="img-phobos" />
+                        <div class="card-body">
+                            <div class="card-title">Triton</div>
+                            <div class="card-desc">Neptune’s largest moon, unique for its retrograde orbit and active nitrogen geysers.</div>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }
+            else if (category === "stars") {
+                content.innerHTML = `
+                <h1>Stars</h1>
+                <div class="exp box">
+                    <h2>What is a Star?</h2>
+                    <p>Stars are giant, glowing spheres of hot gas (mostly hydrogen and helium) held together by their own gravity. At their cores, intense pressure and temperature ignite nuclear fusion, converting hydrogen into helium. This process releases massive amounts of energy, which radiates as the light and heat we see.</p>
+                </div>
+                <h3>Our Star : Sun</h3>
+                <h4>The Sun is a medium-sized yellow star at the center of our Solar System, providing light and energy through nuclear fusion.</h4>
+                <div class="main">
+                    <div class="item">
+                        <a href="planets.html?category=sun">
+                            <img src="sun.jpg" class="img-sun">
+                            <div class="label">Sun</div>
+                        </a>
+                    </div>
+                </div>
+                <h3>Stellar Evulation</h3>
+                <h4>Stellar evolution is the process by which a star changes over billions of years. Governed primarily by a star's mass, the life cycle dictates its birth in a nebula, a stable period of nuclear fusion, and an explosive or gradual death that seeds the universe with heavy elements.</h4>
+                <div class="stellar-evolution">
+                    <!-- Stellar Nebula -->
+                    <div class="phase-start">
+                        <div class="phase-card" data-info="A stellar nebula is a massive interstellar cloud composed of hydrogen, helium, and dust particles. These regions are the birthplace of stars. Over time, gravity causes denser clumps to collapse, increasing pressure and temperature until nuclear fusion begins in the core, marking the formation of a protostar.">
+                            <img src="nebula.jpg" class="img-nebula" alt="Stellar Nebula" />
+
+                            <div class="phase-hover">
+                                <h3>Stellar Nebula</h3>
+                                <p>
+                                    A giant cloud of gas and dust in space.
+                                    Gravity pulls this material together,
+                                    eventually forming a new star.
+                                </p>
+                            </div>
+
+                            <div class="phase-label">Stellar Nebula</div>
+                        </div>
+                    </div>
+
+                    <!-- Fork -->
+                    <div class="fork">
+                        <div class="fork-arrow left">
+                            <div class="fork-line"></div>
+                            <span>High Mass Star</span>
+                        </div>
+                        
+                        <p class="info-text" id="mainSequenceText">Main Sequence</p>
+
+                        <div class="popup-overlay" id="popup">
+                            <div class="popup-card">
+                                <button class="close-btn" id="closePopup">✕</button>
+                                <h2 id="popupTitle">Title</h2>
+                                <p id="popupText">Description</p>
+                            </div>
+                        </div>
+
+                        <p class="info-text2" id="giantPhaseText">Giant Phase</p>
+
+                        <div class="popup-overlay" id="popup">
+                            <div class="popup-card">
+                                <button class="close-btn" id="closePopup">✕</button>
+                                <h2 id="popupTitle">Title</h2>
+                                <p id="popupText">Description</p>
+                            </div>
+                        </div>
+
+                        <p class="info-text3" id="remnantText">Remnant</p>
+
+                        <div class="popup-overlay" id="popup">
+                            <div class="popup-card">
+                                <button class="close-btn" id="closePopup">✕</button>
+                                <h2 id="popupTitle">Title</h2>
+                                <p id="popupText">Description</p>
+                            </div>
+                        </div>
+
+                        <p class="info-text4" id="finalText">Final Phase</p>
+
+                        <div class="popup-overlay" id="popup">
+                            <div class="popup-card">
+                                <button class="close-btn" id="closePopup">✕</button>
+                                <h2 id="popupTitle">Title</h2>
+                                <p id="popupText">Description</p>
+                            </div>
+                        </div>
+
+                        <div class="fork-arrow right">
+                            <div class="fork-line"></div>
+                            <span>Low / Mid Mass Star</span>
+                        </div>
+                    </div>
+
+
+                    <!-- Two paths -->
+                    <div class="paths">
+
+                        <!-- High Mass Path -->
+                        <div class="path1">
+
+                            <div class="phase-card" data-info="Blue stars are extremely massive (8–150 solar masses), with very high surface temperatures (10,000–50,000°C). They burn hydrogen at a rapid rate, making them extremely luminous but short-lived, typically lasting only millions of years.">
+                                <img src="s1-1024.jpg" alt="High Mass Star" />
+
+                                <div class="phase-hover">
+                                    <h3>Blue Stars</h3>
+                                    <p>
+                                        A massive blue-white star, 8–150 times
+                                        the mass of the Sun. Burns extremely hot
+                                        and fast, lasting only millions of years.
+                                    </p>
+                                </div>
+
+                                <div class="phase-label">Blue Stars</div>
+                            </div>
+
+                            <div class="path-arrow">→</div>
+
+                            <div class="phase-card" data-info="A red supergiant is a late evolutionary stage of a massive star after hydrogen in the core is exhausted. The core contracts while the outer layers expand dramatically, sometimes exceeding 1,000 times the Sun’s radius. Despite its enormous size, the surface temperature drops to about 3,000–4,500°C, giving it a red appearance. Heavier elements begin to fuse in the core until iron is formed.">
+                                <img src="image_5156_2e-Antares.jpg" class="img-red" alt="Red Supergiant" />
+
+                                <div class="phase-hover">
+                                    <h3>Red Supergiant</h3>
+                                    <p>
+                                        When the star runs out of hydrogen fuel,
+                                        it expands into a red supergiant —
+                                        hundreds of times larger than the Sun.
+                                    </p>
+                                </div>
+
+                                <div class="phase-label">Red Supergiant</div>
+                            </div>
+
+                            <div class="path-arrow">→</div>
+
+                            <div class="phase-card" data-info="A supernova is a catastrophic explosion that occurs when a massive star’s core collapses under gravity after reaching iron. Since iron fusion consumes energy instead of releasing it, the core collapses rapidly, triggering a rebound shockwave. This explosion releases more energy in seconds than the Sun will emit in its entire lifetime and spreads heavy elements into space.">
+                                <img src="supernova.jpg" alt="Supernova" />
+
+                                <div class="phase-hover">
+                                    <h3>Supernova</h3>
+                                    <p>
+                                        The star explodes in a massive
+                                        supernova — one of the most powerful
+                                        events in the universe, briefly
+                                        outshining entire galaxies.
+                                    </p>
+                                </div>
+
+                                <div class="phase-label">Supernova</div>
+                            </div>
+
+                            <div class="supernova-split">
+
+                                <div class="split-branch left">
+                                    <div class="diagonal-arrow">↙</div>
+
+                                    <div class="phase-card" data-info="A neutron star is the ultra-dense remnant of a core-collapse supernova. It typically has a mass between 1.4 and 2.3 solar masses compressed into a sphere only about 10–15 km in radius. The density is so extreme that protons and electrons merge into neutrons, forming a matter state unique to these objects. A single teaspoon would weigh billions of tons on Earth.">
+                                        <img src="What_is_a_neutron_star.jpg.jpg" alt="Neutron Star" />
+
+                                        <div class="phase-hover">
+                                            <h3>Neutron Star</h3>
+                                            <p>After the supernova, the core collapses into an incredibly dense neutron star.</p>
+                                        </div>
+
+                                        <div class="phase-label">Neutron Star</div>
+                                    </div>
+                                
+                                </div>
+
+                                <div class="split-branch right">
+                                    <div class="diagonal-arrow">↘</div>
+
+                                    <div class="phase-card" data-info="A black hole forms when the collapsed core of a massive star exceeds the Tolman–Oppenheimer–Volkoff limit and no known force can stop gravitational collapse. The result is a singularity surrounded by an event horizon, where escape velocity exceeds the speed of light. It warps spacetime so strongly that time slows dramatically near its boundary..">
+                                        <img src="black_hole_16x9_2.jpg" alt="Black Hole" />
+
+                                        <div class="phase-hover">
+                                            <h3>Black Hole</h3>
+                                            <p>The most massive stars collapse into a black hole.</p>
+                                        </div>
+
+                                        <div class="phase-label">Black Hole</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            
+                        </div>
+
+                        <!-- Low / Mid Mass Path -->
+                        <div class="path2">
+
+                            <div class="phase-card" data-info="Red dwarfs and yellow stars are low to medium-mass main sequence stars. Red dwarfs are the smallest, coolest, and most common type of star, burning their fuel very slowly and lasting trillions of years. Yellow stars, like the Sun, are more massive and hotter, with surface temperatures around 5,000–6,000°C. These stars are stable during most of their lifetimes and form the baseline of stellar evolution.">
+                                <img src="mainstar.jpg" class="img-main" alt="Main Sequence Star" />
+
+                                <div class="phase-hover">
+                                    <h3>Main Sequence</h3>
+                                    <p>
+                                        A smaller star like the Sun spends
+                                        billions of years in the main sequence
+                                        phase, steadily fusing hydrogen into
+                                        helium.
+                                    </p>
+                                </div>
+
+                                <div class="phase-label">Red and Yellow Stars</div>
+                            </div>
+
+                            <div class="path-arrow">→</div>
+
+                            <div class="phase-card" data-info="A red giant forms when a star like the Sun exhausts hydrogen in its core. The core contracts while hydrogen fusion continues in a surrounding shell, causing the outer layers to expand massively. Surface temperature decreases, but luminosity increases due to size. The star can reach tens to hundreds of times its original radius.">
+                                <img src="red-giant-star.png" class="img-red" alt="Red Giant" />
+
+                                <div class="phase-hover">
+                                    <h3>Red Giant</h3>
+                                    <p>
+                                        As the star runs out of hydrogen,
+                                        it expands into a red giant,
+                                        becoming cooler but much larger.
+                                    </p>
+                                </div>
+
+                                <div class="phase-label">Red Giant</div>
+                            </div>
+
+                            <div class="path-arrow">→</div>
+
+                            <div class="phase-card" data-info="A planetary nebula occurs when a red giant sheds its outer layers into space during the late stages of evolution. The exposed hot core emits ultraviolet radiation, ionizing the expelled gas and causing it to glow. Despite the name, it has no relation to planets; the term originated from its round, planet-like appearance in early telescopes.">
+                                <img src="planetary.jpg" alt="Planetary Nebula" />
+
+                                <div class="phase-hover">
+                                    <h3>Planetary Nebula</h3>
+                                    <p>
+                                        The outer layers of the star drift away
+                                        into space, forming a colorful
+                                        planetary nebula.
+                                    </p>
+                                </div>
+
+                                <div class="phase-label">Planetary Nebula</div>
+                            </div>
+
+                            <div class="path-arrow">→</div>
+
+                            <div class="phase-card" data-info="A white dwarf is the final evolutionary stage of low and medium-mass stars. It is composed mostly of carbon and oxygen, supported by electron degeneracy pressure rather than nuclear fusion. With a mass comparable to the Sun but a radius similar to Earth, it is extremely dense and slowly cools over billions of years until it eventually becomes a black dwarf (theoretical).">
+                                <img src="white.jpg" alt="White Dwarf" />
+
+                                <div class="phase-hover">
+                                    <h3>White Dwarf</h3>
+                                    <p>
+                                        The remaining core becomes a white
+                                        dwarf — a small, dense stellar remnant
+                                        slowly cooling over billions of years.
+                                    </p>
+                                </div>
+
+                                <div class="phase-label">White Dwarf</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-overlay" id="popup">
+
+                    <div class="popup-card">
+
+                        <button class="close-btn" id="closePopup">✕</button>
+
+                        <h2 id="popupTitle">Title</h2>
+
+                        <p id="popupText">
+                        Description
+                        </p>
+
+                    </div>
+
+                </div>
+                `
+            }
+            else if (category === "asteroids") {
+                content.innerHTML = `
+                <h1>Asteroids</h1>
+                <div class="exp box">
+                    <h2>What is an Asteroid?</h2>
+                    <p>An asteroid is a small, rocky object that orbits the Sun, mostly found in the region between Mars and Jupiter known as the asteroid belt. Unlike planets, asteroids are too small to become spherical and often have irregular shapes. They are remnants from the early formation of the Solar System, made of rock, metal, or a combination of both.</p>
+                </div>
+                <h3>Asteroid Belts</h3>
+                <div class="belt-section">
+                    <div class="belt-text">
+                        <h4>The asteroid belt is a region of the Solar System populated by countless rocky and metallic bodies orbiting the Sun. It is one of the most important transition zones in planetary structure, separating the inner rocky planets from the outer gas and ice giants. This region preserves ancient material from the early formation of the Solar System.</h4>
+                    </div>
+                    <div class="wrapperr">
+                        <img src="belts.jpg" class="img-belt"></img>
+                    </div>
+                </div>    
+                <ul class="belts-list">
+                    <li><span>Main Asteroid Belt:</span> The Main Asteroid Belt is a region located between Mars and Jupiter where most of the Solar System’s asteroids are found. It contains a wide variety of rocky and metallic bodies, ranging from tiny fragments to dwarf planets like Ceres. This region is strongly influenced by Jupiter’s gravity, which prevented the material here from forming into a full planet.</li>
+                    <li><span>Kuiper Belt:</span> The Kuiper Belt is a vast, distant region beyond Neptune filled with icy bodies, dwarf planets, and remnants from the early Solar System. It is much larger and more spread out than the Main Asteroid Belt and includes well-known objects such as Pluto. This region represents the outer edge of the planetary system and transitions into interstellar space.</li>
+                </ul>
+                <h3>Meteoroids, Meteors & Meteorites</h3>
+                <ul class="meteor-list">
+                    <li><span class="icon">☄️</span><span>Meteoroid:</span> A meteoroid is a small rocky or metallic object traveling through space, usually fragments broken off from asteroids or comets. They range in size from tiny grains of dust to objects several meters wide and orbit the Sun before entering a planet’s atmosphere.</li>
+                    <li><span class="icon">🌠</span><span>Meteor:</span> A meteor is the visible streak of light produced when a meteoroid enters a planet’s atmosphere and burns up due to friction with air particles. This phenomenon is often called a “shooting star,” even though it is not a star.</li>
+                    <li><span class="icon">🪨</span><span>Meteorite:</span> A meteorite is the part of a meteoroid that survives its passage through the atmosphere and reaches the surface of a planet or moon. These objects can provide important scientific information about the early Solar System.</li>
+                </ul>
+                `
+            }
+            else if (category === "comets") {
+                content.innerHTML = `
+                <h1>Comets</h1>
+                <div class="exp box">
+                    <h2>What is a Comet?</h2>
+                    <p>Comets are icy bodies that orbit the Sun and develop glowing tails when they get close to it. These tails are formed by gas and dust released as the comet heats up, creating one of the most spectacular phenomena in the Solar System.</p>
+                </div>
+                <h3>Structure of a Comet</h3>
+                <div class="comet">
+                    <div class="comet-text">
+                        <ul class="comet-list">
+                            <li><span>Nucleus:</span> The solid core made of ice and rock.</li>
+                            <li><span>Coma:</span> A glowing cloud of gas and dust surrounding the nucleus.</li>
+                            <li><span>Tail:</span> Streams of dust and gas pushed away by solar wind and radiation.</li>
+                        </ul>
+                    </div>
+                        <div class="wrapperrr">
+                            <img src="comet.jpg" class="img-comet"></img>
+                        </div>
+                </div>
+                <h3>Some of the Famous Comets</h3>
+                <div class="grid">
+                    <div class="card">
+                        <img src="halley.jpg" class="img-halley" />
+                        <div class="card-body">
+                            <div class="card-title">Halley’s Comet</div>
+                            <div class="card-desc">The most famous periodic comet, visible from Earth approximately every 76 years. It has been recorded since ancient times and will next return in 2061.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Comet-Hale-Bopp-by-Alan-Hale-10d7d34.jpg" class="img-halley" />
+                        <div class="card-body">
+                            <div class="card-title">Comet Hale–Bopp</div>
+                            <div class="card-desc">One of the brightest comets of the 20th century, visible to the naked eye for 18 months in 1997 due to its large size and high activity.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Comet_2020_F3_(NEOWISE)_on_Jul_14_2020_aligned_to_stars.jpg" class="img-halley" />
+                        <div class="card-body">
+                            <div class="card-title">Comet NEOWISE (C/2020 F3)</div>
+                            <div class="card-desc">A bright comet discovered in 2020 that became visible to the naked eye in the Northern Hemisphere during summer 2020.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="Collision_Comet_Shoemaker_Levy_9_pillars.jpg" class="img-halley" />
+                        <div class="card-body">
+                            <div class="card-title">Comet Shoemaker–Levy 9</div>
+                            <div class="card-desc">A comet famous for colliding with Jupiter in 1994, providing the first direct observation of a large impact between solar system bodies.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="hyaku_apr.jpg" class="img-halley" />
+                        <div class="card-body">
+                            <div class="card-title">Comet Hyakutake</div>
+                            <div class="card-desc">A very bright comet that passed extremely close to Earth in 1996, with an exceptionally long tail visible across much of the night sky.</div>
+                        </div>
+                    </div>
+                </div>
+                `
+            }
+            else if (category === "galaxies") {
+                content.innerHTML = `
+                <h1>Galaxies</h1>
+                <div class="exp box">
+                    <h2>What is a Galaxy?</h2>
+                    <p>A galaxy is a massive, gravitationally bound system made up of stars, stellar remnants, interstellar gas, dust, and dark matter. Galaxies contain anywhere from millions to trillions of stars. Our solar system resides in a spiral galaxy called the Milky Way, which contains roughly 100 to 400 billion stars.</p>
+                </div>
+                <h3>Our Galaxy : Milky Way</h3>
+                <h4>Milky Way Galaxy, large spiral system consisting of several hundred billion stars, one of which is the Sun.</h4>
+                <div class="main">
+                    <div class="item">
+                        <a href="planets.html?category=milky">
+                            <img src="milky_way.jpg" class="img-milky">
+                            <div class="label">Milky Way</div>
+                        </a>
+                    </div>
+                </div>
+                <h3>Key Components of a Galaxy</h3>
+                <ul class="stats-list">
+                    <li><span>Stars:</span> The primary visible components, ranging from small red dwarfs to massive blue giants.</li>
+                    <li><span>Supermassive Black Holes:</span> Most large galaxies are believed to harbor incredibly massive black holes at their centers.</li>
+                    <li><span>Dark Matter:</span> An invisible form of matter that makes up the majority of a galaxy's mass and provides the gravitational "glue" that holds it all together.</li>
+                    <li><span>Gas and Dust:</span> The raw material from which new stars and planets are formed.</li>
+                </ul>
+                <h3>The Three Main Types of Galaxies</h3>
+                <ul class="stats-list">
+                    <li><span>Spiral:</span> Shaped like rotating pinwheels, featuring a dense center and swirling "arms" where new star formation often occurs (e.g., the Milky Way and Andromeda).</li>
+                    <li><span>Elliptical:</span> Large, rounded, and often featureless blobs. They contain primarily older, dying stars and very little gas or dust.</li>
+                    <li><span>Irregular:</span> Chaotic and asymmetrical shapes. They usually do not fit into the spiral or elliptical categories and are often the result of galactic collisions.</li>
+                </ul>
+                <h3>Some Visible Galaxies from Earth</h3>
+                <div class="grid">
+                    <div class="card">
+                        <img src="Andromeda_Galaxy_2025.jpg" class="card-img" />
+                        <div class="card-body">
+                            <div class="card-title">Andromeda</div>
+                            <div class="card-desc">Andromeda Galaxy is the closest major spiral galaxy to the Milky Way and can be seen from Earth as a faint smudge of light under dark sky conditions. It is approximately 2.5 million light-years away and is expected to collide with our galaxy in about 4–5 billion years.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="LMC.jpg" class="card-img" />
+                        <div class="card-body">
+                            <div class="card-title">Large Magellanic Cloud</div>
+                            <div class="card-desc">Large Magellanic Cloud is a satellite dwarf galaxy of the Milky Way located roughly 160,000 light-years away. It contains active star-forming regions, including the well-known Tarantula Nebula, and is best observed from the Southern Hemisphere.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="smc.jpg" class="card-img" />
+                        <div class="card-body">
+                            <div class="card-title">Small Magellanic Cloud</div>
+                            <div class="card-desc">Small Magellanic Cloud is another dwarf satellite galaxy of the Milky Way, located about 200,000 light-years away. It has an irregular structure with ongoing star formation and can be seen from southern skies without the need for a telescope.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="m33.jpg" class="card-img" />
+                        <div class="card-body">
+                            <div class="card-title">Triangulum Galaxy (M33)</div>
+                            <div class="card-desc">Triangulum Galaxy is a spiral galaxy within the Local Group, located around 2.7 million light-years away. It is one of the most distant objects that can be observed under very dark skies and is rich in gas and active star-forming regions.</div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="m51-and-companion_0-jpg.webp" class="card-img" />
+                        <div class="card-body">
+                            <div class="card-title">Whirlpool Galaxy (M51)</div>
+                            <div class="card-desc">Whirlpool Galaxy is a classic interacting spiral galaxy situated about 23 million light-years from Earth. It is famous for its clearly defined spiral arms and is often used as a textbook example of galaxy interaction and structure.</div>
+                        </div>
+                    </div>
+                `
+            }
+            
+        </script>
+        <script>
+        setTimeout(() => {
+    const hash = window.location.hash.replace("#", "").trim();
+    if (hash) {
+      const allTitles = document.querySelectorAll(".card-title, .card-moon .card-title");
+      for (let title of allTitles) {
+        if (title.textContent.trim() === hash) {
+          const card = title.closest(".card") || title.closest(".card-moon");
+          card.scrollIntoView({ behavior: "smooth", block: "center" });
+          card.style.borderColor = "rgba(140,100,220,0.9)";
+          setTimeout(() => {
+            card.style.borderColor = "";
+          }, 2000);
+          break;
+        }
+      }
+    }
+  }, 500);
+      </script>
+      <script>
+
+        const popup = document.getElementById("popup");
+const popupTitle = document.getElementById("popupTitle");
+const popupText = document.getElementById("popupText");
+const closePopupBtn = document.getElementById("closePopup");
+
+document.querySelectorAll(".phase-card").forEach(card => {
+  card.addEventListener("click", () => {
+    popupTitle.textContent = card.querySelector(".phase-label").textContent;
+    popupText.textContent = card.dataset.info;
+
+    popup.classList.add("active");
+  });
+});
+
+document.getElementById("mainSequenceText").addEventListener("click", () => {
+  popupTitle.textContent = "Main Sequence";
+  popupText.textContent = "The main sequence is the longest and most stable phase in a star’s life cycle. During this stage, the star produces energy by fusing hydrogen into helium in its core. A balance between gravity and radiation pressure keeps the star stable. The duration of this phase depends on mass: massive stars live fast and short, while smaller stars can remain in this stage for billions to trillions of years.";
+
+  popup.classList.add("active");
+});
+
+document.getElementById("giantPhaseText").addEventListener("click", () => {
+  popupTitle.textContent = "Giant Phase";
+  popupText.textContent = "The giant phase occurs when a star runs out of hydrogen in its core. The core contracts while the outer layers expand significantly, causing the star to become much larger and cooler on the surface. Depending on the star’s mass, this phase leads to either a red giant (low/medium mass stars) or a red supergiant (high mass stars). This stage marks the beginning of the star’s final evolutionary changes.";
+
+  popup.classList.add("active");
+});
+
+document.getElementById("remnantText").addEventListener("click", () => {
+  popupTitle.textContent = "Remnant";
+  popupText.textContent = "Stellar remnants are the final objects left after a star dies. Low and medium-mass stars become white dwarfs, extremely dense objects supported by electron degeneracy pressure. Massive stars can form neutron stars, where matter is compressed into an ultra-dense neutron state. The most massive stars collapse further into black holes, regions of spacetime where gravity is so strong that not even light can escape.";
+
+  popup.classList.add("active");
+});
+
+document.getElementById("finalText").addEventListener("click", () => {
+  popupTitle.textContent = "Final Phase";
+  popupText.textContent = "The final phase depends on the star’s mass. High-mass stars end their lives in a supernova explosion, a violent collapse of the core that releases enormous energy and disperses heavy elements into space. Low and medium-mass stars instead shed their outer layers gradually, forming a planetary nebula. Both processes mark the end of active fusion in the star’s life cycle.";
+
+  popup.classList.add("active");
+});
+
+closePopupBtn.addEventListener("click", () => {
+  popup.classList.remove("active");
+});
+    </script>
+    <div class="credit">
+            <div class="line"></div>
+            <div class="name">Made by Arda</div>
+            <div class="line2"></div>
+            <div class="footer"></div>
+        </div>
+        <script>
+  const pages = {
+    // Planets
+    "mercury": "planets.html?category=mercury",
+    "venus": "planets.html?category=venus",
+    "earth": "planets.html?category=earth",
+    "mars": "planets.html?category=mars",
+    "jupiter": "planets.html?category=jupiter",
+    "saturn": "planets.html?category=saturn",
+    "uranus": "planets.html?category=uranus",
+    "neptune": "planets.html?category=neptune",
+
+    "sun": "planets.html?category=sun",
+
+    "milky way": "planets.html?category=milky",
+
+    // Moons
+    "moon": "planets.html?category=moon",
+    "luna": "planets.html?category=moon",
+
+    // Categories
+    "planets": "detail.html?category=planets",
+    "moons": "detail.html?category=moons",
+    "stars": "detail.html?category=stars",
+    "galaxies": "detail.html?category=galaxies",
+    "asteroids": "detail.html?category=asteroids",
+    "comets": "detail.html?category=comets",
+
+
+  };
+
+  const cards = {
+    "pluto": "detail.html?category=planets#Pluto",
+    "ceres": "detail.html?category=planets#Ceres",
+    "eris": "detail.html?category=planets#Eris",
+    "haumea": "detail.html?category=planets#Haumea",
+    "makemake": "detail.html?category=planets#Makemake",
+    "51 pegasi b": "detail.html?category=planets#52 Pegasi b",
+    "52 pegasi b": "detail.html?category=planets#52 Pegasi b",
+    "proxima centauri b": "detail.html?category=planets#Proxima Centauri b",
+    "trappist-1e": "detail.html?category=planets#TRAPPIST-1e",
+    "kepler-186f": "detail.html?category=planets#Kepler-186f",
+    "kepler-452b": "detail.html?category=planets#Kepler-452b",
+    "phobos": "detail.html?category=moons#Phobos",
+    "ganymede": "detail.html?category=moons#Ganymede",
+    "europa": "detail.html?category=moons#Europa",
+    "callisto": "detail.html?category=moons#Callisto",
+    "io": "detail.html?category=moons#Io",
+    "titan": "detail.html?category=moons#Titan",
+    "enceladus": "detail.html?category=moons#Enceladus",
+    "triton": "detail.html?category=moons#Triton",
+    "andromeda": "detail.html?category=galaxies#Andromeda",
+    "Whirlpool": "detail.html?category=galaxies#Whirlpool Galaxy (M51)",
+    "m51": "detail.html?category=galaxies#Whirlpool Galaxy (M51)",
+    "m33": "detail.html?category=galaxies#Triangulum Galaxy (M33)",
+    "smc": "detail.html?category=galaxies#Small Magellanic Cloud",
+    "lmc": "detail.html?category=galaxies#Large Magellanic Cloud",
+    "Halley's Comet": "detail.html?category=galaxies#Halley's Comet",
+  };
+
+  document.getElementById("searchInput").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      const query = this.value.toLowerCase().trim();
+      if (pages[query]) {
+        window.location.href = pages[query];
+      } else if (cards[query]) {
+        window.location.href = cards[query];
+      }   else if (card-moon[query]) {
+        window.location.href = card-moon[query];
+      } else {
+        alert("Topic not found. Try: Mercury, Pluto, Titan...");
+      }
+    }
+  });
+
+  const input = document.getElementById("searchInput");
+const box = document.getElementById("suggestions");
+
+const allItems = { ...pages, ...cards };
+
+input.addEventListener("input", () => {
+
+    const q = input.value.toLowerCase().trim();
+    box.innerHTML = "";
+
+    if (!q) {
+        box.style.display = "none";
+        return;
+    }
+
+    const matches = Object.keys(allItems).filter(key =>
+        key.toLowerCase().includes(q)
+    );
+
+    if (matches.length === 0) {
+        box.style.display = "none";
+        return;
+    }
+
+    box.style.display = "block";
+
+    matches.slice(0, 6).forEach(item => {
+
+        const div = document.createElement("div");
+        div.classList.add("suggestion-item");
+        div.textContent = item;
+
+        div.onclick = () => {
+            window.location.href = allItems[item];
+        };
+
+        box.appendChild(div);
+    });
+});
+</script>
+    </body>
+</html>

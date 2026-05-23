@@ -1,0 +1,258 @@
+body {
+    margin: 0;
+    height: 180vh;
+    font-family: "Inter", sans-serif;
+    background: #0a0a1a;
+    color: #e8e8f0;
+    overflow-x: hidden;
+    max-width: 100%;
+    padding: 10;
+    padding-bottom: 20px;
+}
+
+.nav {
+    display: flex;
+    width: 100%;
+    background-color: rgba(10,8,28,0.95);
+    text-align: center;
+    padding: 14px 28px;
+    border-bottom: 0.5px solid rgba(140,100,220,0.3);
+    font-family: "Orbitron", sans-serif;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    color: #c4a8f0;
+    gap: 8px;
+    letter-spacing: 0.02 em;
+    align-items: center;
+    margin-left: 1px;
+}
+
+.nav-logo i {
+    font-size: 30px;
+}
+
+
+.nav-search {
+    display: flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 20px;
+    gap: 8px;
+    background: rgba(255,255,255,0.06);
+    border: 0.5px solid rgba(140,100,220,0.3);
+    width: 200px;
+    margin-right: 40px;
+    position: relative;
+}
+
+.nav-search input {
+    background: none;
+    outline: none;
+    border: none;
+    color: #e8e8f0;
+    font-size: 13px;
+    width: 140px;
+}
+
+.nav-search input::placeholder { color: #6060a0; }
+.nav-search i { font-size: 15px; color: #6060a0; }
+
+.hero {
+    padding: 52px 28px 40px;
+    text-align: center;
+    background: radial-gradient(ellipse at 50% 0%, rgba(100,60,200,0.18) 0%, transparent 65%);
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8860d0;
+  margin-bottom: 14px;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(140,100,220,0.15);
+  border: 0.5px solid rgba(140,100,220,0.45);
+  color: #c4a8f0;
+  font-size: 13px;
+  padding: 9px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.hero-cta:hover {
+  background: rgba(140,100,220,0.28);
+}
+
+.btn {
+    display: inline-block;
+    border-radius: 10px;
+    color: #c4a8f0;
+    text-decoration: none;
+}
+
+.hero h1 {
+  font-size: 34px;
+  font-weight: 500;
+  color: #f0ecff;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.hero h1 span {
+  color: #a07ae0;
+}
+.hero p {
+  font-size: 14px;
+  color: #8080aa;
+  max-width: 420px;
+  margin: 0 auto 24px;
+  line-height: 1.7;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 2 sütun */
+    gap: 80px; /* aralarındaki boşluk */
+    justify-items: center;
+    margin-top: 100px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item:hover {
+    background: rgba(140,100,220,0.28);
+}
+
+.item img.img-moons {
+    object-fit: contain;
+    width: 300px;
+    background-color: black;
+}
+
+.item img.img-death {
+    object-fit: contain;
+    width: 300px;
+    background-color: black;
+}
+
+.item img {
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 5px solid rgba(140,100,220,0.45);
+    color: rgb(196, 168, 240);
+}
+
+.label {
+    font-size: 28px;
+    background-color: rgba(140, 100, 220, 0.311);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+
+
+.item a {
+    text-decoration: none;
+}
+
+.stats {
+  display: flex;
+  gap: 14px;
+  padding: 0 28px 32px;
+}
+.stat {
+  flex: 1;
+  background: rgba(255,255,255,0.03);
+  border: 0.5px solid rgba(140,100,220,0.2);
+  border-radius: 10px;
+  padding: 14px 16px;
+  text-align: center;
+}
+.stat-num {
+  font-size: 22px;
+  font-weight: 500;
+  color: #c4a8f0;
+}
+.stat-label {
+  font-size: 11px;
+  color: #6060a0;
+  margin-top: 3px;
+}
+
+.line {
+  margin-top: 60px;
+  padding: 1px 2px;
+  display: flex;
+  background-color: #55049d6f;
+}
+
+.line2 {
+  padding: 1px 2px;
+  display: flex;
+  background-color: #55049d6f;
+}
+
+.name {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #8860d0;
+}
+
+.footer {
+  height: 15px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.suggestions-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    margin-top: 8px;
+
+    background: rgba(15,15,30,0.95);
+    border: 1px solid rgba(140,100,220,0.35);
+    border-radius: 12px;
+
+    overflow: hidden;
+    z-index: 999;
+
+    display: none;
+}
+
+.suggestion-item {
+    padding: 10px 12px;
+    cursor: pointer;
+    color: #e8e8f0;
+    font-size: 13px;
+    transition: background 0.2s;
+}
+
+.suggestion-item:hover {
+    background: rgba(140,100,220,0.2);
+}

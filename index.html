@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter&family=Orbitron&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    </head>
+    <body>
+        <nav class="nav">
+            <div class="nav-logo">
+                <i class="ti ti-planet"></i> Celestial Index
+            </div>
+            <div class="nav-search">
+                <i class="ti ti-search"></i>
+                <input type="text" id="searchInput" placeholder="Search topics…" />
+                <div id="suggestions" class="suggestions-box"></div>
+            </div>
+        </nav>    
+
+        <div class="hero">
+            <div class="hero-eyebrow">Your guide to the cosmos</div>
+            <h1>Explore the <span>Universe</span><br>one topic at a time</h1>
+            <p>From nearby planets to distant galaxies — clear, simple explanations of everything out there.</p>
+            <div class="hero-cta">
+                <i class="ti ti-rocket"></i>
+                <a href="#category" class="btn">Start Exploring</a>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat"><div class="stat-num">8</div><div class="stat-label">Planets covered</div></div>
+            <div class="stat"><div class="stat-num">40+</div><div class="stat-label">Celestial Objects</div></div>
+            <div class="stat"><div class="stat-num">6</div><div class="stat-label">Categories</div></div>
+            <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Things to discover</div></div>
+        </div>
+
+        <div class="main" id="category">
+            <div class="item">
+                <a href="detail.html?category=planets">
+                    <img src="Jupiter_against_black_background_of_space.jpeg" class="img-planets">
+                    <div class="label">Planets</div>
+                </a>
+            </div>
+
+            <div class="item">
+                <a href="detail.html?category=moons">
+                    <img src="1-enceladus-2983453.webp" class="img-moons">
+                    <div class="label">Moons</div>
+                </a>
+            </div>
+
+            <div class="item">
+                <a href="detail.html?category=stars">
+                    <img src="hubble_ngc2031-jpg.webp" class="img-stars">
+                    <div class="label">Stars</div>
+                </a>
+            </div>
+
+            <div class="item">
+                <a href="detail.html?category=galaxies">
+                    <img src="Andromeda_Galaxy_2025.jpg" class="img-galaxies">
+                    <div class="label">Galaxies</div>
+                </a>
+            </div>
+
+            <div class="item">
+                <a href="detail.html?category=asteroids">
+                    <img src="psyche-asteroid-illustration-pia24472.webp" class="img-asteroid">
+                    <div class="label">Asteroids</div>
+                </a>
+            </div>
+
+            <div class="item">
+                <a href="detail.html?category=comets">
+                    <img src="1920x1080.jpg" class="img-comets">
+                    <div class="label">Comets</div>
+                </a>
+            </div>
+
+        </div>
+        <div class="credit">
+            <div class="line"></div>
+            <div class="name">Made by Arda</div>
+            <div class="line2"></div>
+            <div class="footer"></div>
+        </div>
+        
+        <script src="" async defer></script>
+        <script>
+  const pages = {
+    // Planets
+    "mercury": "planets.html?category=mercury",
+    "venus": "planets.html?category=venus",
+    "earth": "planets.html?category=earth",
+    "mars": "planets.html?category=mars",
+    "jupiter": "planets.html?category=jupiter",
+    "saturn": "planets.html?category=saturn",
+    "uranus": "planets.html?category=uranus",
+    "neptune": "planets.html?category=neptune",
+
+    "sun": "planets.html?category=sun",
+
+    "milky way": "planets.html?category=milky",
+
+    // Moons
+    "moon": "planets.html?category=moon",
+    "luna": "planets.html?category=moon",
+
+    // Categories
+    "planets": "detail.html?category=planets",
+    "moons": "detail.html?category=moons",
+    "stars": "detail.html?category=stars",
+    "galaxies": "detail.html?category=galaxies",
+    "asteroids": "detail.html?category=asteroids",
+    "comets": "detail.html?category=comets",
+
+
+  };
+
+  const cards = {
+    "pluto": "detail.html?category=planets#Pluto",
+    "ceres": "detail.html?category=planets#Ceres",
+    "eris": "detail.html?category=planets#Eris",
+    "haumea": "detail.html?category=planets#Haumea",
+    "makemake": "detail.html?category=planets#Makemake",
+    "51 pegasi b": "detail.html?category=planets#52 Pegasi b",
+    "52 pegasi b": "detail.html?category=planets#52 Pegasi b",
+    "proxima centauri b": "detail.html?category=planets#Proxima Centauri b",
+    "trappist-1e": "detail.html?category=planets#TRAPPIST-1e",
+    "kepler-186f": "detail.html?category=planets#Kepler-186f",
+    "kepler-452b": "detail.html?category=planets#Kepler-452b",
+    "phobos": "detail.html?category=moons#Phobos",
+    "ganymede": "detail.html?category=moons#Ganymede",
+    "europa": "detail.html?category=moons#Europa",
+    "callisto": "detail.html?category=moons#Callisto",
+    "io": "detail.html?category=moons#Io",
+    "titan": "detail.html?category=moons#Titan",
+    "enceladus": "detail.html?category=moons#Enceladus",
+    "triton": "detail.html?category=moons#Triton",
+    "andromeda": "detail.html?category=galaxies#Andromeda",
+    "Whirlpool": "detail.html?category=galaxies#Whirlpool Galaxy (M51)",
+    "m51": "detail.html?category=galaxies#Whirlpool Galaxy (M51)",
+    "m33": "detail.html?category=galaxies#Triangulum Galaxy (M33)",
+    "smc": "detail.html?category=galaxies#Small Magellanic Cloud",
+    "lmc": "detail.html?category=galaxies#Large Magellanic Cloud",
+    "Halley's Comet": "detail.html?category=galaxies#Halley's Comet",
+  };
+
+  document.getElementById("searchInput").addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      const query = this.value.toLowerCase().trim();
+      if (pages[query]) {
+        window.location.href = pages[query];
+      } else if (cards[query]) {
+        window.location.href = cards[query];
+      }   else if (card-moon[query]) {
+        window.location.href = card-moon[query];
+      } else {
+        alert("Topic not found. Try: Mercury, Pluto, Titan...");
+      }
+    }
+  });
+
+  const input = document.getElementById("searchInput");
+const box = document.getElementById("suggestions");
+
+const allItems = { ...pages, ...cards };
+
+input.addEventListener("input", () => {
+
+    const q = input.value.toLowerCase().trim();
+    box.innerHTML = "";
+
+    if (!q) {
+        box.style.display = "none";
+        return;
+    }
+
+    const matches = Object.keys(allItems).filter(key =>
+        key.toLowerCase().includes(q)
+    );
+
+    if (matches.length === 0) {
+        box.style.display = "none";
+        return;
+    }
+
+    box.style.display = "block";
+
+    matches.slice(0, 6).forEach(item => {
+
+        const div = document.createElement("div");
+        div.classList.add("suggestion-item");
+        div.textContent = item;
+
+        div.onclick = () => {
+            window.location.href = allItems[item];
+        };
+
+        box.appendChild(div);
+    });
+});
+</script>
+    </body>
+</html>
