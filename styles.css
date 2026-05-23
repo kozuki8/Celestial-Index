@@ -257,6 +257,7 @@ html {
     background: rgba(140,100,220,0.2);
 }
 
+
 @media (max-width: 768px) {
     .stats {
         flex-direction: column;
