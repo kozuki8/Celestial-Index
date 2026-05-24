@@ -597,22 +597,6 @@ They can have moons, atmospheres, and different surface conditions.</p>
   </div>
 
 </div>
-                
-                <div class="popup-overlay" id="popup">
-
-                    <div class="popup-card">
-
-                        <button class="close-btn" id="closePopup">✕</button>
-
-                        <h2 id="popupTitle">Title</h2>
-
-                        <p id="popupText">
-                        Description
-                        </p>
-
-                    </div>
-
-                </div>
                 `
             }
             else if (category === "asteroids") {
@@ -795,20 +779,20 @@ They can have moons, atmospheres, and different surface conditions.</p>
       </script>
       <script>
 
-        const popup = document.getElementById("popup");
-const popupTitle = document.getElementById("popupTitle");
-const popupText = document.getElementById("popupText");
-const closePopupBtn = document.getElementById("closePopup");
-
-document.querySelectorAll(".phase-card").forEach(card => {
-  card.addEventListener("click", () => {
-    popupTitle.textContent = card.querySelector(".phase-label").textContent;
-    popupText.textContent = card.dataset.info;
-
-    popup.classList.add("active");
-  });
+        document.addEventListener("click", function(e) {
+  const card = e.target.closest(".phase-card");
+  if (card) {
+    document.getElementById("popupTitle").textContent = card.querySelector(".phase-label").textContent;
+    document.getElementById("popupText").textContent = card.dataset.info;
+    document.getElementById("popup").classList.add("active");
+  }
 });
 
+document.addEventListener("click", function(e) {
+  if (e.target.id === "closePopup" || e.target.classList.contains("popup-overlay")) {
+    document.getElementById("popup").classList.remove("active");
+  }
+});
 document.getElementById("mainSequenceText").addEventListener("click", () => {
   popupTitle.textContent = "Main Sequence";
   popupText.textContent = "The main sequence is the longest and most stable phase in a star’s life cycle. During this stage, the star produces energy by fusing hydrogen into helium in its core. A balance between gravity and radiation pressure keeps the star stable. The duration of this phase depends on mass: massive stars live fast and short, while smaller stars can remain in this stage for billions to trillions of years.";
@@ -962,5 +946,12 @@ input.addEventListener("input", () => {
     });
 });
 </script>
+        <div class="popup-overlay" id="popup">
+  <div class="popup-card">
+    <button class="close-btn" id="closePopup">✕</button>
+    <h2 id="popupTitle">Title</h2>
+    <p id="popupText">Description</p>
+  </div>
+</div>
     </body>
 </html>
