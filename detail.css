@@ -1062,29 +1062,10 @@ html {
     margin: 0;
   }
 
-  .phase-card {
-    width: 220px;
-    height: 170px;
-  }
-
-  .phase-card img {
-    height: 110px;
-  }
-
-  .phase-label {
-    font-size: 13px;
-    padding: 8px;
-  }
-
-  .phase-hover h3 {
-    font-size: 13px;
-  }
-
-  .phase-hover p {
-    font-size: 11px;
-  }
-
   /* Completely rebuild fork for mobile */
+  .fork {
+    display: none;
+  }
 
   .fork::before,
   .fork::after {
@@ -1124,25 +1105,6 @@ html {
     display: none;
   }
 
-  .path-arrow,
-  .path-arroww {
-    font-size: 1.4rem;
-    margin: 2px 0;
-  }
-
-  .supernova-split {
-    flex-direction: row;
-    gap: 16px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .diagonal-arrow {
-    font-size: 1.8rem;
-    margin-top: 0;
-    margin-bottom: 8px;
-  }
-
   .split-branch {
     align-items: center;
   }
@@ -1150,20 +1112,6 @@ html {
 
 /* Extra narrow phones in portrait */
 @media (max-width: 400px) {
-
-  .phase-card {
-    width: 180px;
-    height: 150px;
-  }
-
-  .phase-card img {
-    height: 90px;
-  }
-
-  .phase-label {
-    font-size: 11px;
-    padding: 6px;
-  }
 
   .fork-arrow span {
     font-size: 11px;
@@ -1238,5 +1186,63 @@ html {
 @media (min-width: 901px) {
   .mobile-fork {
     display: none;
+  }
+}
+
+@media (max-width: 900px) {
+
+  .phase-card {
+    width: 150px;
+    height: 130px;
+  }
+
+  .phase-card img {
+    height: 85px;
+  }
+
+  .phase-label {
+    font-size: 11px;
+    padding: 6px 4px;
+  }
+
+  .phase-hover h3 {
+    font-size: 11px;
+  }
+
+  .phase-hover p {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .path-arrow,
+  .path-arroww {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+
+  .diagonal-arrow {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
+  }
+
+  .supernova-split {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .phase-card {
+    width: 120px;
+    height: 110px;
+  }
+
+  .phase-card img {
+    height: 68px;
+  }
+
+  .phase-label {
+    font-size: 9px;
+    padding: 5px 3px;
   }
 }
