@@ -780,50 +780,48 @@ They can have moons, atmospheres, and different surface conditions.</p>
       <script>
 
         document.addEventListener("click", function(e) {
-  const card = e.target.closest(".phase-card");
-  if (card) {
-    document.getElementById("popupTitle").textContent = card.querySelector(".phase-label").textContent;
-    document.getElementById("popupText").textContent = card.dataset.info;
-    document.getElementById("popup").classList.add("active");
-  }
-});
 
-document.addEventListener("click", function(e) {
-  if (e.target.id === "closePopup" || e.target.classList.contains("popup-overlay")) {
-    document.getElementById("popup").classList.remove("active");
-  }
-});
-document.getElementById("mainSequenceText").addEventListener("click", () => {
-  popupTitle.textContent = "Main Sequence";
-  popupText.textContent = "The main sequence is the longest and most stable phase in a star’s life cycle. During this stage, the star produces energy by fusing hydrogen into helium in its core. A balance between gravity and radiation pressure keeps the star stable. The duration of this phase depends on mass: massive stars live fast and short, while smaller stars can remain in this stage for billions to trillions of years.";
+    // Phase card tıklaması
+    const card = e.target.closest(".phase-card");
+    if (card) {
+      document.getElementById("popupTitle").textContent = card.querySelector(".phase-label").textContent;
+      document.getElementById("popupText").textContent = card.dataset.info;
+      document.getElementById("popup").classList.add("active");
+      return;
+    }
 
-  popup.classList.add("active");
-});
+    // Info text tıklamaları
+    const infoData = {
+      "mainSequenceText": {
+        title: "Main Sequence",
+        text: "The main sequence is the longest and most stable phase in a star's life cycle. During this stage, the star produces energy by fusing hydrogen into helium in its core. A balance between gravity and radiation pressure keeps the star stable. The duration of this phase depends on mass: massive stars live fast and short, while smaller stars can remain in this stage for billions to trillions of years."
+      },
+      "giantPhaseText": {
+        title: "Giant Phase",
+        text: "The giant phase occurs when a star runs out of hydrogen in its core. The core contracts while the outer layers expand significantly, causing the star to become much larger and cooler on the surface. Depending on the star's mass, this phase leads to either a red giant (low/medium mass stars) or a red supergiant (high mass stars)."
+      },
+      "remnantText": {
+        title: "Remnant",
+        text: "Stellar remnants are the final objects left after a star dies. Low and medium-mass stars become white dwarfs. Massive stars can form neutron stars. The most massive stars collapse further into black holes, regions of spacetime where gravity is so strong that not even light can escape."
+      },
+      "finalText": {
+        title: "Final Phase",
+        text: "The final phase depends on the star's mass. High-mass stars end their lives in a supernova explosion. Low and medium-mass stars instead shed their outer layers gradually, forming a planetary nebula. Both processes mark the end of active fusion in the star's life cycle."
+      }
+    };
 
-document.getElementById("giantPhaseText").addEventListener("click", () => {
-  popupTitle.textContent = "Giant Phase";
-  popupText.textContent = "The giant phase occurs when a star runs out of hydrogen in its core. The core contracts while the outer layers expand significantly, causing the star to become much larger and cooler on the surface. Depending on the star’s mass, this phase leads to either a red giant (low/medium mass stars) or a red supergiant (high mass stars). This stage marks the beginning of the star’s final evolutionary changes.";
+    if (e.target.id && infoData[e.target.id]) {
+      document.getElementById("popupTitle").textContent = infoData[e.target.id].title;
+      document.getElementById("popupText").textContent = infoData[e.target.id].text;
+      document.getElementById("popup").classList.add("active");
+      return;
+    }
 
-  popup.classList.add("active");
-});
-
-document.getElementById("remnantText").addEventListener("click", () => {
-  popupTitle.textContent = "Remnant";
-  popupText.textContent = "Stellar remnants are the final objects left after a star dies. Low and medium-mass stars become white dwarfs, extremely dense objects supported by electron degeneracy pressure. Massive stars can form neutron stars, where matter is compressed into an ultra-dense neutron state. The most massive stars collapse further into black holes, regions of spacetime where gravity is so strong that not even light can escape.";
-
-  popup.classList.add("active");
-});
-
-document.getElementById("finalText").addEventListener("click", () => {
-  popupTitle.textContent = "Final Phase";
-  popupText.textContent = "The final phase depends on the star’s mass. High-mass stars end their lives in a supernova explosion, a violent collapse of the core that releases enormous energy and disperses heavy elements into space. Low and medium-mass stars instead shed their outer layers gradually, forming a planetary nebula. Both processes mark the end of active fusion in the star’s life cycle.";
-
-  popup.classList.add("active");
-});
-
-closePopupBtn.addEventListener("click", () => {
-  popup.classList.remove("active");
-});
+    // Kapatma
+    if (e.target.id === "closePopup" || e.target.classList.contains("popup-overlay")) {
+      document.getElementById("popup").classList.remove("active");
+    }
+  });
     </script>
     <div class="credit">
             <div class="line"></div>
