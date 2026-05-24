@@ -975,7 +975,6 @@ html {
 @media (max-width: 768px) {
 
     .wrapper,
-    .wrapperr,
     .wrapperrr {
         width: 95%;
         height: auto;
@@ -1023,11 +1022,14 @@ html {
     .belt-text {
         width: 100%;
         text-align: center;
+        margin-right: 20px;
+        margin-top: -70px;
     }
 
     .wrapperr {
         width: 90%;
         height: auto;
+        margin-left: 0;
     }
 
     .wrapperr img {
