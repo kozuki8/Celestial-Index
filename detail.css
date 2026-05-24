@@ -1085,16 +1085,6 @@ html {
   }
 
   /* Completely rebuild fork for mobile */
-  .fork {
-    position: static;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    width: 100%;
-    margin: 8px 0;
-    gap: 0;
-  }
 
   .fork::before,
   .fork::after {
@@ -1177,5 +1167,76 @@ html {
 
   .fork-arrow span {
     font-size: 11px;
+  }
+}
+
+@media (max-width: 900px) {
+
+  /* Hide the original fork completely on mobile */
+  .fork {
+    display: none;
+  }
+
+  /* Add a simple mobile fork via a new element */
+  .mobile-fork {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 8px 0 24px;
+  }
+
+  .mobile-fork-line {
+    width: 2px;
+    height: 20px;
+    background: rgba(140,100,220,0.5);
+  }
+
+  .mobile-fork-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    position: relative;
+    gap: 0;
+  }
+
+  .mobile-fork-row::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 50%;
+    height: 2px;
+    background: rgba(140,100,220,0.5);
+  }
+
+  .mobile-fork-branch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    padding-top: 0;
+  }
+
+  .mobile-fork-branch-line {
+    width: 2px;
+    height: 20px;
+    background: rgba(140,100,220,0.5);
+  }
+
+  .mobile-fork-branch span {
+    font-size: 13px;
+    color: #8860d0;
+    font-family: "Orbitron", sans-serif;
+    text-align: center;
+    padding: 0 8px;
+  }
+}
+
+/* Hide mobile fork on desktop */
+@media (min-width: 901px) {
+  .mobile-fork {
+    display: none;
   }
 }
