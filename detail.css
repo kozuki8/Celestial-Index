@@ -1037,67 +1037,114 @@ html {
 }
 
 @media (max-width: 768px) {
-
-    .path-arrow,
-    .path-arroww,
-    .diagonal-arrow {
-        font-size: 18px;
-        margin: 5px 0;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .phase-card {
-        width: 180px;
-        height: 140px;
-    }
-
-    .phase-card img {
-        height: 90px;
-    }
-
-    .phase-label {
-        font-size: 14px;
-        padding: 10px;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .phase-label,
-    .info-text,
-    .info-text2,
-    .info-text3,
-    .info-text4 {
-        position: static;
-        margin: 10px 0;
-        transform: none;
-        text-align: center;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .stellar-evolution {
-        transform: scale(0.75);
-        transform-origin: top center;
-    }
-
-    .paths {
-        gap: 60px; /* 200px → 60px */
-        align-items: center;
-        justify-content: center;
-    }
-
-    .path1,
-    .path2 {
-        width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
     body {
         overflow-x: hidden;
     }
+}
+
+@media (max-width: 768px) {
+
+  .stellar-evolution {
+    transform: none; /* remove the scale hack */
+    padding: 20px 12px;
+  }
+
+  /* Stack the two paths vertically */
+  .paths {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .path1, .path2 {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* Phase cards smaller */
+  .phase-card {
+    width: 200px;
+    height: 160px;
+  }
+
+  .phase-card img {
+    height: 100px;
+  }
+
+  .phase-label {
+    font-size: 14px;
+    padding: 10px 8px;
+  }
+
+  /* Fork - simplify to just a straight line down with two labels */
+  .fork {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    margin: 8px 0 0;
+  }
+
+  .fork::before {
+    display: none;
+  }
+
+  .fork::after {
+    display: none;
+  }
+
+  .fork-arrow {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .fork-arrow.left,
+  .fork-arrow.right {
+    position: static;
+    transform: none;
+  }
+
+  .fork-line {
+    display: none;
+  }
+
+  .fork-arrow span {
+    font-size: 14px;
+  }
+
+  /* Phase label texts - remove absolute positioning */
+  .info-text,
+  .info-text2,
+  .info-text3,
+  .info-text4 {
+    display: none; /* hide on mobile, they use absolute positioning which breaks layout */
+  }
+
+  /* Supernova split side by side on mobile */
+  .supernova-split {
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .split-branch {
+    align-items: center;
+  }
+
+  .diagonal-arrow {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+
+  /* Path arrows */
+  .path-arrow,
+  .path-arroww {
+    font-size: 1.5rem;
+    margin: 4px 0;
+  }
 }
