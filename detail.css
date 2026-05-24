@@ -1042,194 +1042,6 @@ html {
     }
 }
 
-@media (max-width: 900px) {
-
-  .stellar-evolution {
-    transform: none;
-    padding: 20px 12px;
-  }
-
-  .paths {
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-    margin-top: 20px;
-  }
-
-  .path1, .path2 {
-    width: 100%;
-    max-width: 300px;
-    margin: 0;
-  }
-
-  /* Completely rebuild fork for mobile */
-  .fork {
-    display: none;
-  }
-
-  .fork::before,
-  .fork::after {
-    display: none;
-  }
-
-  .fork-arrow {
-    position: static;
-    transform: none;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
-    padding: 8px 16px;
-    gap: 0;
-  }
-
-  .fork-arrow.left,
-  .fork-arrow.right {
-    position: static;
-    transform: none;
-  }
-
-  .fork-line {
-    display: none;
-  }
-
-  .fork-arrow span {
-    font-size: 13px;
-    text-align: center;
-  }
-
-  /* Hide floating labels - they break on mobile */
-  .info-text,
-  .info-text2,
-  .info-text3,
-  .info-text4 {
-    display: none;
-  }
-
-  .split-branch {
-    align-items: center;
-  }
-}
-
-/* Extra narrow phones in portrait */
-@media (max-width: 400px) {
-
-  .fork-arrow span {
-    font-size: 11px;
-  }
-}
-
-@media (max-width: 900px) {
-
-  /* Hide the original fork completely on mobile */
-  .fork {
-    display: none;
-  }
-
-  /* Add a simple mobile fork via a new element */
-  .mobile-fork {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 8px 0 24px;
-  }
-
-  .mobile-fork-line {
-    width: 2px;
-    height: 20px;
-    background: rgba(140,100,220,0.5);
-  }
-
-  .mobile-fork-row {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    width: 100%;
-    position: relative;
-    gap: 0;
-  }
-
-  .mobile-fork-row::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 25%;
-    width: 50%;
-    height: 2px;
-    background: rgba(140,100,220,0.5);
-  }
-
-  .mobile-fork-branch {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
-    padding-top: 0;
-  }
-
-  .mobile-fork-branch-line {
-    width: 2px;
-    height: 20px;
-    background: rgba(140,100,220,0.5);
-  }
-
-  .mobile-fork-branch span {
-    font-size: 13px;
-    color: #8860d0;
-    font-family: "Orbitron", sans-serif;
-    text-align: center;
-    padding: 0 8px;
-  }
-}
-
-/* Hide mobile fork on desktop */
-@media (min-width: 901px) {
-  .mobile-fork {
-    display: none;
-  }
-}
-
-@media (max-width: 900px) {
-
-  .phase-card {
-    width: 150px;
-    height: 130px;
-  }
-
-  .phase-card img {
-    height: 85px;
-  }
-
-  .phase-label {
-    font-size: 11px;
-    padding: 6px 4px;
-  }
-
-  .phase-hover h3 {
-    font-size: 11px;
-  }
-
-  .phase-hover p {
-    font-size: 10px;
-    line-height: 1.4;
-  }
-
-  .path-arrow,
-  .path-arroww {
-    font-size: 1.2rem;
-    margin: 0;
-  }
-
-  .diagonal-arrow {
-    font-size: 1.4rem;
-    margin-bottom: 4px;
-  }
-
-  .supernova-split {
-    gap: 10px;
-  }
-}
-
 @media (max-width: 400px) {
 
   .phase-card {
@@ -1244,5 +1056,72 @@ html {
   .phase-label {
     font-size: 9px;
     padding: 5px 3px;
+  }
+}
+
+.stellar-evolution-mobile {
+  display: none;
+}
+
+/* Show mobile version, hide desktop version on mobile */
+@media (max-width: 900px) {
+
+  .stellar-evolution {
+    display: none;
+  }
+
+  .stellar-evolution-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 16px;
+    gap: 0;
+  }
+
+  .mobile-path-title {
+    color: #8860d0;
+    font-size: 22px;
+    font-family: "Orbitron", sans-serif;
+    margin: 32px 0 16px;
+    text-align: center;
+  }
+
+  .mobile-path {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    width: 100%;
+  }
+
+  .mobile-path .phase-card {
+    width: 240px;
+    height: 185px;
+  }
+
+  .mobile-path .phase-card img {
+    height: 130px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .mobile-path .phase-label {
+    font-size: 13px;
+    padding: 10px 8px;
+  }
+
+  .mobile-path .path-arrow {
+    transform: rotate(90deg);
+    font-size: 1.5rem;
+    margin: 6px 0;
+  }
+
+  .mobile-path .phase-hover h3 {
+    font-size: 13px;
+  }
+
+  .mobile-path .phase-hover p {
+    font-size: 11px;
+    line-height: 1.5;
   }
 }
