@@ -1125,3 +1125,11 @@ html {
     line-height: 1.5;
   }
 }
+
+@media (max-width: 768px) {
+  .popup-card {
+    width: 80vw;
+    max-height: 70vh;
+    padding: 20px;
+  }
+}
