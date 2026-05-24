@@ -1042,53 +1042,61 @@ html {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
   .stellar-evolution {
-    transform: none; /* remove the scale hack */
+    transform: none;
     padding: 20px 12px;
   }
 
-  /* Stack the two paths vertically */
   .paths {
     flex-direction: column;
     align-items: center;
     gap: 40px;
+    margin-top: 20px;
   }
 
   .path1, .path2 {
     width: 100%;
-    max-width: 320px;
+    max-width: 300px;
+    margin: 0;
   }
 
-  /* Phase cards smaller */
   .phase-card {
-    width: 200px;
-    height: 160px;
+    width: 220px;
+    height: 170px;
   }
 
   .phase-card img {
-    height: 100px;
+    height: 110px;
   }
 
   .phase-label {
-    font-size: 14px;
-    padding: 10px 8px;
+    font-size: 13px;
+    padding: 8px;
   }
 
-  /* Fork - simplify to just a straight line down with two labels */
+  .phase-hover h3 {
+    font-size: 13px;
+  }
+
+  .phase-hover p {
+    font-size: 11px;
+  }
+
+  /* Completely rebuild fork for mobile */
   .fork {
-    height: auto;
+    position: static;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    height: auto;
+    width: 100%;
+    margin: 8px 0;
     gap: 0;
-    margin: 8px 0 0;
   }
 
-  .fork::before {
-    display: none;
-  }
-
+  .fork::before,
   .fork::after {
     display: none;
   }
@@ -1097,10 +1105,10 @@ html {
     position: static;
     transform: none;
     flex-direction: row;
-    justify-content: center;
-    gap: 40px;
+    justify-content: space-around;
     width: 100%;
-    padding: 8px 0;
+    padding: 8px 16px;
+    gap: 0;
   }
 
   .fork-arrow.left,
@@ -1114,37 +1122,60 @@ html {
   }
 
   .fork-arrow span {
-    font-size: 14px;
+    font-size: 13px;
+    text-align: center;
   }
 
-  /* Phase label texts - remove absolute positioning */
+  /* Hide floating labels - they break on mobile */
   .info-text,
   .info-text2,
   .info-text3,
   .info-text4 {
-    display: none; /* hide on mobile, they use absolute positioning which breaks layout */
+    display: none;
   }
 
-  /* Supernova split side by side on mobile */
+  .path-arrow,
+  .path-arroww {
+    font-size: 1.4rem;
+    margin: 2px 0;
+  }
+
   .supernova-split {
     flex-direction: row;
-    gap: 20px;
+    gap: 16px;
     justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .diagonal-arrow {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 8px;
   }
 
   .split-branch {
     align-items: center;
   }
+}
 
-  .diagonal-arrow {
-    font-size: 2rem;
-    margin-top: 0;
+/* Extra narrow phones in portrait */
+@media (max-width: 400px) {
+
+  .phase-card {
+    width: 180px;
+    height: 150px;
   }
 
-  /* Path arrows */
-  .path-arrow,
-  .path-arroww {
-    font-size: 1.5rem;
-    margin: 4px 0;
+  .phase-card img {
+    height: 90px;
+  }
+
+  .phase-label {
+    font-size: 11px;
+    padding: 6px;
+  }
+
+  .fork-arrow span {
+    font-size: 11px;
   }
 }
